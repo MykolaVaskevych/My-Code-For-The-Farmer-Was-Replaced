@@ -1,21 +1,17 @@
-import till_all
 from all_loop import loop
-
+from movement import goto
 def pumpkin_harvest():
-
-	if can_harvest():
-		if measure() == something:
-			harvest()
-			return True
-	return False
+	goto(0,0)
+	a = measure()
+	b = get_world_size() - 1
+	goto(b,b)
+	if a == measure() and can_harvest():
+		harvest()
+		return True
+	else:
+		return False
 	
 def plant_mega_pumpkin():
-	if get_entity_type() == Entities.Dead_Pumpkin:
-		plant(Entities.Pumpkin)
-	elif not get_entity_type():
-		plant(Entities.Pumpkin)
-	else:
+	plant(Entities.Pumpkin)
+	if ( get_pos_y() == get_world_size() - 1 and get_pos_x() == get_world_size() - 1):
 		pumpkin_harvest()
-
-while not pumpkin_harvest():
-	loop(plant_mega_pumpkin)

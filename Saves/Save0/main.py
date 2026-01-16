@@ -1,7 +1,7 @@
 from wood import plant_wood_y
 from all_loop import loop
 from wattering import water_it
-
+from mega_p import plant_mega_pumpkin
 
 L = [Entities.Grass, Entities.Carrot]
 clear()
@@ -22,7 +22,8 @@ def super_plant():
 	elif num_items(Items.Carrot) < carrot:
 		plant(Entities.Carrot)
 	else:
-		plant(Entities.Pumpkin)
+		goto(0,0)
+		plant_mega_pumpkin()
 	
 	
 		
